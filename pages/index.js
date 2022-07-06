@@ -13,9 +13,9 @@ const Home = () => {
   const router = useRouter();
 
   useEffect(() => {
-    setTimeout(() => {
+    // setTimeout(() => {
       router.push('/home')
-    }, 5000);
+    // }, 5000);
   }, []);
 
   return (
@@ -35,7 +35,7 @@ const Home = () => {
           </Fade>
           <Fade left>
             <div className='w-2/6 h-3/6 bg-black m-auto'>
-              Some Useless Text
+              Text
             </div>
           </Fade>
           <Link href='/home'>Skip</Link>
