@@ -15,6 +15,10 @@
   },
   "devDependencies": {
     "eslint": "8.19.0",
-    "eslint-config-next": "12.2.0"
+    "eslint-config-next": "12.2.0",
+    "react-icons": "^4.4.0",
+    "react-reveal": "^1.2.2",
+    "react-slideshow-image": "^4.0.1",
+    "styled-components": "^5.3.5"
   }
 }
