@@ -32,20 +32,20 @@ const HeaderContainer = styled.nav`
   }
   @media screen and (max-width:640px){
     grid-template-columns:repeat(12, 1fr);
-    grid-template-areas:'number number number number email email email email support support support lang'
-                        'img img img socials socials socials socials socials subscribe subscribe subscribe subscribe';
+    grid-template-areas:'number number number number email email email email support support support support'
+                        'socials socials socials socials socials subscribe subscribe subscribe subscribe lang lang lang';
   }
   @media screen and (max-width:450px){
     grid-template-columns:repeat(9, 1fr);
     grid-template-areas:'number number number email email email support support support'
-                        'img img socials socials socials socials subscribe subscribe lang';
+                        'socials socials socials socials socials subscribe subscribe subscribe lang';
   }
   @media screen and (max-width:400px){
     grid-template-rows:repeat(3, 1fr);
     grid-template-columns:repeat(4, 1fr);
     grid-template-areas:'number number email email'
-                        'img socials socials subscribe'
-                        'img support support lang';
+                        'socials socials subscribe subscribe'
+                        'support support lang lang';
   }
 `
 const NumberContainer = styled.div`
@@ -99,6 +99,10 @@ const ImgContainer = styled.div`
   grid-area:img;
   align-items:center;
   justify-content:center;
+
+  @media screen and (max-width:640px){
+    display:none;
+  }
 `
 const Img = styled.img`
   width:150px;
@@ -107,16 +111,6 @@ const Img = styled.img`
 
   @media screen and (max-width:992px){
     margin-top:25px;
-  }
-
-  @media screen and (max-width:640px){
-    width:100px;
-    height:75px;
-  }
-
-  @media screen and (max-width:450px){
-    width:75px;
-    height:50px;
   }
 `
 const SupportContainer = styled.div`
@@ -143,8 +137,9 @@ const Support = styled.p`
 `
 const SubscribeContainer = styled.div`
   display:flex;
-  grid-area:subscribe;
+  margin:10px 0;
   align-items:center;
+  grid-area:subscribe;
   justify-content:center;
 ` 
 const Subscribe = styled.a`

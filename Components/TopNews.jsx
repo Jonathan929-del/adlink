@@ -14,20 +14,26 @@ const TopNewsContainer = styled.div`
     border-bottom:1px solid #ccc;
 `
 const Heading = styled.h3`
-
+    @media screen and (max-width:640px){
+        font-size:15px;
+    }
 `
 const News = styled.div`
     height:100%;
+    margin:auto;
     display:flex;
     flex-wrap:wrap;
     align-items:center;
-    margin-left:20px;
     justify-content:center;
 `
 const NewsContent = styled.p`
     font-size:15px;
     font-weight:300;
     margin-left:10px;
+
+    @media screen and (max-width:640px){
+        font-size:13px;
+    }
 `
 
 
@@ -40,7 +46,7 @@ const TopNews = () => {
                 Top News:
             </Heading>
             <NewsContent>
-                Some News Some News Some News Some News Some News Some News Some News Some News Some NewsSome News
+                Some News Some News Some News Some News Some News Some News Some News Some News Some News Some News
             </NewsContent>
         </News>
     </TopNewsContainer>

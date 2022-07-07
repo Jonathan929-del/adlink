@@ -8,9 +8,18 @@ import 'react-slideshow-image/dist/styles.css'
 
 // Styles
 const SlidebarContainer = styled.div`
-    width:50%;
+    width:70%;
     height:400px;
     margin:50px auto;
+
+    @media screen and (max-width:992px){
+        width:90%;
+        height:300px;
+    }
+
+    @media screen and (max-width:400px){
+        margin:20px auto;
+    }
 `
 const ImgContainer = styled.div`
     width:100%;
@@ -21,7 +30,7 @@ const ImgContainer = styled.div`
 `
 const LeftArrowIcon = styled(BsArrowLeft)`
     padding:10px;
-    font-size:30px;
+    font-size:50px;
     margin-left:5px;
     border-radius:50%;
     transition:0.2s linear;
@@ -30,10 +39,15 @@ const LeftArrowIcon = styled(BsArrowLeft)`
     &:hover{
         background-color:#000000a1;
     }
+
+    @media screen and (max-width:768px){
+        padding:7px;
+        font-size:30px;
+    }
 `
 const RightArrowIcon = styled(BsArrowRight)`
     padding:10px;
-    font-size:30px;
+    font-size:50px;
     margin-right:5px;
     border-radius:50%;
     transition:0.2s linear;
@@ -42,39 +56,71 @@ const RightArrowIcon = styled(BsArrowRight)`
     &:hover{
         background-color:#000000a1;
     }
+
+    @media screen and (max-width:768px){
+        padding:7px;
+        font-size:30px;
+    }
 `
 const Img = styled.div`
     width:100%;
     height:400px;
+    border-radius:5px;
     position:relative;
     background-size:cover;
     background-image:${({imgSrc}) => `url('${imgSrc}')`};
+
+    @media screen and (max-width:992px){
+        height:300px;
+    }
 `
 const Layer = styled.div`
     top:0;
     left:0;
     width:100%;
     height:100%;
-    color:#fff;
     display:flex;
     position:absolute;
-    padding:40px 100px;
+    border-radius:5px;
+    padding-left:100px;
     flex-direction:column;
-    justify-content:flex-start;
+    align-items:flex-start;
+    justify-content:center;
     background-color:#000000ad;
+
+    @media screen and (max-width:768px){
+        padding-left:50px;
+    }
 `
 const Heading = styled.h4`
-    font-size:25px;
+    font-size:30px;
     font-weight:300;
+    border-bottom:2px solid #0d5091;
+
+    @media screen and (max-width:640px){
+        font-size:23px;
+    }
 `
 const Titles = styled.div`
-    width:60%;
+    width:100%;
+    height:70%;
     display:grid;
     margin-top:10px;
+    column-gap:20px;
+    align-items:center;
+    justify-content:flex-start;
     grid-template-columns:repeat(2, 1fr);
+
+    @media screen and (max-width:500px){
+        grid-template-columns:repeat(1, 1fr);
+    }
 `
 const Title = styled.p`
-    font-size:17px;
+    font-size:20px;
+
+    @media screen and (max-width:640px){
+        font-size:16px;
+    }
 `
 
 
@@ -129,17 +175,9 @@ const Slidebar = () => {
         },
 	];
 
-    const prevArrow = (
-        <LeftArrowIcon />
-    );
-
-    const nextArrow = (
-        <RightArrowIcon />
-    )
-
 	return (
 		<SlidebarContainer>
-            <Slide indicators={true} duration={5000} infinite={true} transitionDuration={500} prevArrow={prevArrow} nextArrow={nextArrow}>
+            <Slide indicators={true} duration={5000} infinite={true} transitionDuration={500} prevArrow={<LeftArrowIcon />} nextArrow={<RightArrowIcon />}>
                 {images.map((each, index) => (
                     <ImgContainer key={index}>
                         <Img imgSrc={each.img}>
